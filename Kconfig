@@ -1,0 +1,44 @@
+menu "Edge Telemetry Node"
+
+config EDGE_NODE_ID
+	string "Node identifier"
+	default "nrf52840-node-01"
+
+config EDGE_SAMPLE_PERIOD_MS
+	int "Sensor sampling period (ms)"
+	range 10 60000
+	default 100
+
+config EDGE_REST_POLL_MS
+	int "REST command poll period (ms)"
+	range 1000 120000
+	default 5000
+
+config EDGE_PIPELINE_QUEUE_DEPTH
+	int "Pipeline queue depth"
+	range 4 128
+	default 32
+
+config EDGE_TELEMETRY_HOST
+	string "Telemetry gateway host"
+	default "192.168.1.10"
+
+config EDGE_TELEMETRY_PORT
+	int "Telemetry TCP/WebSocket port"
+	range 1 65535
+	default 9000
+
+config EDGE_REST_PORT
+	int "REST gateway port"
+	range 1 65535
+	default 8080
+
+config EDGE_WS_URL
+	string "WebSocket URL"
+	default "/ws/telemetry"
+
+config EDGE_REST_URL
+	string "REST command URL"
+	default "/api/v1/command"
+
+endmenu

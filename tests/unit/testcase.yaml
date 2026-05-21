@@ -1,0 +1,8 @@
+tests:
+  edge.telemetry.pipeline_math:
+    platform_allow:
+      - native_sim
+    tags:
+      - unit
+      - pipeline
+    harness: ztest
